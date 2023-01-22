@@ -19,6 +19,11 @@ header{
     background-color: #09090A;
     width: 100%;
 }
+.header-buttons{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
 button{
     padding: 16px 24px;  
     border-radius: 8px;

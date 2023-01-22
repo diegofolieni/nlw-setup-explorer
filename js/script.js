@@ -1,9 +1,11 @@
 const form = document.querySelector("#form-habits")
 const nlwSetup = new NLWSetup(form)
-const button = document.querySelector("header button")
+const buttonAdd = document.querySelector("header button#add")
+const buttonClear = document.querySelector("header button#clear")
 
-button.addEventListener("click", add)
+buttonAdd.addEventListener("click", add)
 form.addEventListener("change", save)
+buttonClear.addEventListener("click", clear)
 
 function add(){
     const today = new Date().toLocaleDateString("pt-br").slice(0, -5);
@@ -12,6 +14,11 @@ function add(){
         return;
     }
     nlwSetup.addDay(today)
+}
+
+function clear(){
+    localStorage.clear('NLWSetup@habits')
+    document.location.reload() 
 }
 
 function save(){
